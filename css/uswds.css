@@ -3145,8 +3145,8 @@ fieldset {
 .usa-hero {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-image: url("../img/hero.png");
-  background-position: center;
+  background-image: url("../img/flag-hero-image.jpg");
+  background-position: 60% 60%;
   background-size: cover;
 }
 

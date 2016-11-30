@@ -1,5 +1,4 @@
 
-
 var CIVIC_INFO_BASE_URL = 'https://www.googleapis.com/civicinfo/v2/representatives';
 
 
@@ -12,23 +11,31 @@ function getDataFromApi(addressString, callback) {
 }
 
 
+function makeAddressString() {
+  var address = $('#street-input').val() + ' ' +
+    $('#city-input').val() + ' ' +
+    $('#state-select option:selected').val() + ' ' +
+    $('#postal-code-input').val();
+    console.log(address);
+  return address;
+}
+
 
 function displaySearchData(data) {
   var resultElement = '';
-
   console.log(data);
+
   if (data.officials) {
     data.officials.forEach(function(item) {
       console.log(item);
       resultElement += displayResult(item);
+      $('.contact-page').html(resultElement);
     });
   } else {
     $('.invalid-address-page').show();
-    $('.loader').hide();
+    $('.contact-page').hide();
     $('.address-page').hide();
   }
-
-  $('.contact-page').html(resultElement);
 }
 
 
@@ -145,14 +152,7 @@ function displayResult(item) {
 
 
 
-function getAddress() {
-var address = $('#street-input').val() + ' ' +
-  $('#city-input').val() + ' ' +
-  $('#state-select option:selected').val() + ' ' +
-  $('#postal-code-input').val();
-  console.log(address);
-return address;
-}
+
 
 
 // Geolocation functions
@@ -241,7 +241,7 @@ $(document).ready(function(e) {
 
   $('.address-page').on('submit', function(e) {
     e.preventDefault();
-    getDataFromApi(getAddress(), displaySearchData);
+    getDataFromApi(makeAddressString(), displaySearchData);
     $('.address-page').hide();
     $('.contact-page').show();
   });

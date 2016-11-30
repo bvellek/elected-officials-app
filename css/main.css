@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+
 
 body {
   text-align: center;
@@ -9,21 +7,8 @@ body {
 
 
 .landing-page {
-  border: 1px solid lightgrey;
-  border-radius: 6px;
-  width: 60%;
   margin: 1em auto;
 }
-
-section {
-  border: 1px solid lightgrey;
-  border-radius: 6px;
-  width: 60%;
-  margin: 1em auto;
-}
-
-
-
 
 .error {
   background-color: #e59393;
@@ -36,16 +21,14 @@ section {
 .address-page {
   border: 1px solid lightgrey;
   border-radius: 6px;
-  width: 60%;
   margin: 1em auto;
 }
 
 #address-form {
-  width: 40%;
-  margin: 2em auto;
+
+  margin: 1em auto;
   text-align: left;
 }
-
 
 #address-form fieldset {
   display: flex;
