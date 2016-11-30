@@ -25,14 +25,6 @@ section {
 
 
 
-
-
-button {
-  display: block;
-  margin: 1em auto;
-}
-
-
 .error {
   background-color: #e59393;
   width: 60%;
