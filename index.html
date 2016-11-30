@@ -8,13 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
-        
-        <link rel="stylesheet" href="/css/uswds.css">
+
+        <link rel="stylesheet" href="css/uswds.css">
         <link rel="stylesheet" href="css/main.css">
     </head>
   <body>
-      <header>
-        <h1>Discover Your Elected Officials</h1>
+      <header class="usa-navbar">
+        <h1 class="">Discover Your Elected Officials</h1>
       </header>
     <div class="landing-page">
       <section>
@@ -26,24 +26,24 @@
 
     <div class="geo-results-error-page error">
       <h2>Error Browser Does Not Support Geolocation: Please enter your address manually</h2>
-      <button id="geo-error-btn" type="button" name="button">Enter Address</button>
+      <button class="usa-button-secondary" id="geo-error-btn" type="button" name="button">Enter Address</button>
     </div>
 
     <div class="invalid-address-page error">
       <h2>Error Invalid Address: Please re-enter your address</h2>
-      <button id="invalid-address-btn" type="button" name="button">Enter Address</button>
+      <button class="usa-button-secondary" id="invalid-address-btn" type="button" name="button">Enter Address</button>
     </div>
 
     <div class="address-page">
 
-      <button id="geolocate-btn" type="button" name="button">Use current location*</button>
+      <button class="usa-button-gray" id="geolocate-btn" type="button" name="button">Use current location*</button>
 
 
       <div class="geo-results-loading">
         <div class="loader">Loading...</div>
       </div>
 
-      <form id="address-form" class="" action="index.html" method="post">
+      <form id="address-form" class="usa-form-large" action="index.html" method="post">
         <fieldset class="adr">
           <legend>Address Form</legend>
 
@@ -112,7 +112,7 @@
           <input class="postal-code" id="postal-code-input" type="number" name="postal-code" postal-code placeholder="20500" max="99999" min="1" required>
         </fieldset>
 
-        <button id="address-submit" type="submit" name="address-submit-btn">Submit</button>
+        <button class="usa-button-primary" id="address-submit" type="submit" name="address-submit-btn">Submit</button>
       </form>
       <p>* For accuracy of results, only use this function if you are currently located at the address of your voter registration.</p>
     </div>
