@@ -1,9 +1,9 @@
 
+
 var CIVIC_INFO_BASE_URL = 'https://www.googleapis.com/civicinfo/v2/representatives';
 
 
 function getDataFromApi(addressString, callback) {
-  console.log('getDataFromApi', addressString, callback);
   var query = {
     key: 'AIzaSyAt0jGSlpc9KfAJJN2KM15XS8f52bQjyKo',
     address: addressString,
@@ -29,16 +29,6 @@ function displaySearchData(data) {
   }
 
   $('.contact-page').html(resultElement);
-}
-
-
-function getAddress() {
-var address = $('#street-input').val() + ' ' +
-  $('#city-input').val() + ' ' +
-  $('#state-select option:selected').val() + ' ' +
-  $('#postal-code-input').val();
-  console.log(address);
-return address;
 }
 
 
@@ -72,14 +62,12 @@ var resultTemplate = $(
 '</section>'
 );
 
+
+
 function displayResult(item) {
   var newResult = $(resultTemplate).clone();
 
-  var party = item.party;
-  var phone = item.phones[0];
-
-
-
+  //Photo display
   if (item.photoUrl) {
     var photoUrl = item.photoUrl;
     newResult.find('.headshot').attr('src', photoUrl);
@@ -87,6 +75,7 @@ function displayResult(item) {
     newResult.find('.headshot').attr('src', 'img/noIMG.jpg');
   }
 
+  //Name display as link if URL available
   if (item.urls) {
     var name = item.name;
     newResult.find('h3 .url').text(name);
@@ -98,6 +87,23 @@ function displayResult(item) {
     newResult.find('h3').append(name1);
   }
 
+  //Party display
+  if (item.party) {
+    var party = item.party;
+    newResult.find('.party span').text(party);
+  } else {
+    newResult.find('.party').remove();
+  }
+
+  //Phone number display
+  if (item.phones) {
+    var phone = item.phones[0];
+    newResult.find('li .tel').text(phone);
+  } else {
+    newResult.find('li .tel').remove();
+  }
+
+  //Address display with optional line two for street address
   if (item.address) {
     var city = item.address[0].city;
     var state = item.address[0].state;
@@ -118,18 +124,7 @@ function displayResult(item) {
     newResult.find('li:contains(Address)').remove();
   }
 
-
-
-
-
-
-
-
-
-  newResult.find('.party span').text(party);
-  newResult.find('li .tel').text(phone);
-
-
+  //Email display
   if (item.emails) {
     var email = item.emails[0];
     newResult.find('li .email').text(email);
@@ -150,7 +145,14 @@ function displayResult(item) {
 
 
 
-
+function getAddress() {
+var address = $('#street-input').val() + ' ' +
+  $('#city-input').val() + ' ' +
+  $('#state-select option:selected').val() + ' ' +
+  $('#postal-code-input').val();
+  console.log(address);
+return address;
+}
 
 
 // Geolocation functions
@@ -188,8 +190,11 @@ function getPosition(position) {
 
       $('#address-form').show();
       $('.loader').hide();
+
     } else {
+      $('.address-page').hide();
       $('.geo-results-error-page').show();
+      $('#address-form').show();
     }
   });
 }
