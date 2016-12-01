@@ -26,7 +26,6 @@ function getOfficeByOffical(data, officialIndex) {
   var officeMatch;
   data.offices.forEach(function(office) {
     office.officialIndices.forEach(function(officeIndex) {
-      console.log(officeIndex, officialIndex);
       if (officeIndex == officialIndex) {
         officeMatch = office;
         return false;
@@ -38,14 +37,10 @@ function getOfficeByOffical(data, officialIndex) {
 
 function displaySearchData(data) {
   var resultElement = '';
-  console.log(data);
 
   if (data.officials) {
-
     data.officials.forEach(function(official, officialIndex) {
       var office = getOfficeByOffical(data, officialIndex);
-      console.log(office);
-      console.log(official);
       resultElement += displayResult(official, office);
       $('.contact-page').html(resultElement);
     });
@@ -170,6 +165,14 @@ function displayResult(item, office) {
 }
 
 
+
+
+
+
+
+
+
+
 // Geolocation functions
 
 function getLocation() {
@@ -188,22 +191,40 @@ function getPosition(position) {
   var latlngStr = [];
   latlngStr.push(lat, long);
   var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
-  console.log(lat, long, latlngStr, latlng);
 
   geocoder.geocode({'location': latlng}, function(results, status) {
+
+    var getAddressComponentByType = function (type){
+      var match;
+      results[0].address_components.forEach(function(address_component){
+        address_component.types.forEach(function(key) {
+          if (type == key) {
+            match = address_component;
+            return false;
+          }
+        });
+      });
+      return match;
+    };
+
+
     if (status === 'OK') {
-      console.log(results);
 
-      var street = results[0].address_components[0].long_name + ' ' + results[0].address_components[1].short_name;
-      var city = results[0].address_components[3].long_name;
-      var state = results[0].address_components[5].short_name;
-      var zipcode = results[0].address_components[7].short_name;
+      var street1 = [getAddressComponentByType("street_number")][0].long_name + ' ' + [getAddressComponentByType("route")][0].short_name;
+      var city1= [getAddressComponentByType("locality")][0].long_name;
+      var state1 = [getAddressComponentByType("administrative_area_level_1")][0].short_name;
+      var zip1 = [getAddressComponentByType("postal_code")][0].short_name;
+
+      // var street = results[0].address_components[0].long_name + ' ' + results[0].address_components[1].short_name;
+      // var city = results[0].address_components[3].long_name;
+      // var state = results[0].address_components[5].short_name;
+      // var zipcode = results[0].address_components[7].short_name;
 
 
-      $('#street-input').val(street);
-      $('#city-input').val(city);
-      $('#state-select option').filter(function(i, e) { return $(e).val() == state;}).prop('selected', true);
-      $('#postal-code-input').val(zipcode);
+      $('#street-input').val(street1);
+      $('#city-input').val(city1);
+      $('#state-select option').filter(function(i, e) { return $(e).val() == state1;}).prop('selected', true);
+      $('#postal-code-input').val(zip1);
 
 
       $('#address-form').show();
