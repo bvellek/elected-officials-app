@@ -14,8 +14,7 @@
     </head>
   <body>
 
-
-    <header class="usa-header site-header">
+    <header class="usa-header">
       <h1 class="usa-logo-text">Discover Your Elected Officials</h1>
     </header>
 
@@ -42,12 +41,12 @@
       <button class="usa-button-primary" id="start-link" type="button" name="button">Find Your Officials</button>
     </div>
 
-    <div class="geo-results-error-page error">
+    <div class="geo-results-error-page error usa-grid-full">
       <h2>Error Browser Does Not Support Geolocation: Please enter your address manually</h2>
       <button class="usa-button-secondary" id="geo-error-btn" type="button" name="button">Enter Address</button>
     </div>
 
-    <div class="invalid-address-page error">
+    <div class="invalid-address-page error usa-grid-full">
       <h2>Error Invalid Address: Please re-enter your address</h2>
       <button class="usa-button-secondary" id="invalid-address-btn" type="button" name="button">Enter Address</button>
     </div>
@@ -55,7 +54,6 @@
     <div class="address-page usa-grid-full">
 
       <button class="usa-button-gray" id="geolocate-btn" type="button" name="button">Use current location*</button>
-
 
       <div class="geo-results-loading">
         <div class="loader">Loading...</div>
@@ -135,75 +133,12 @@
       <p>* For accuracy of results, only use this function if you are currently located at the address of your voter registration.</p>
     </div>
 
-    <div class="contact-page">
-
-      <!-- <section class="contact-card">
-        <div class="headshot-container">
-          <img class="headshot" src="http://www.whitehouse.gov/sites/default/files/imagecache/admin_official_lowres/administration-official/ao_image/president_official_portrait_hires.jpg" alt="">
-        </div>
-
-        <div class="info">
-          <h3>Name: <a class="url fn" target="_blank" href="http://www.wycokck.org">Barack Obama</a></h3>
-          <h4>Office: <span>President</span></h4>
-          <h4>Party: <span>Democratic</span></h4>
-          <details class="contact-info">
-            <summary>Contact Information</summary>
-            <ul>
-              <li>Phone: <span class="tel">(202) 456-1111</span></li>
-              <li>Address:
-                <div class="adr">
-                  <div class="street-address">1600 Pennsylvania Ave</div>
-                  <span class="locality">Washington</span>,
-                  <span class="region">District of Columbia</span>,
-                  <span class="postal-code">20500</span>
-                </div>
-              </li>
-              <li>Email: <a class="email" href="mailto:clerkwest@wycokck.org">clerkwest@wycokck.org</a></li>
-            </ul>
-          </details>
-        </div>
-      </section>
+    <div class="contact-page"></div>
 
 
-      <section class="contact-card">
-        <div class="headshot-container">
-          <img class="headshot" src="http://www.whitehouse.gov/sites/default/files/imagecache/admin_official_lowres/administration-official/ao_image/president_official_portrait_hires.jpg" alt="">
-        </div>
-
-        <div class="info">
-          <h3>Name: <a class="url fn" target="_blank" href="http://www.wycokck.org">Barack Obama</a></h3>
-          <h4>Office: <span>President</span></h4>
-          <h4>Party: <span>Democratic</span></h4>
-          <details class="contact-info">
-            <summary>Contact Information</summary>
-            <ul>
-              <li>Phone: <span class="tel">(202) 456-1111</span></li>
-              <li>Address:
-                <div class="adr">
-                  <div class="street-address">1600 Pennsylvania Ave</div>
-                  <span class="locality">Washington</span>,
-                  <span class="region">District of Columbia</span>,
-                  <span class="postal-code">20500</span>
-                </div>
-              </li>
-              <li>Email: <a class="email" href="mailto:clerkwest@wycokck.org">clerkwest@wycokck.org</a></li>
-            </ul>
-          </details>
-        </div>
-      </section> -->
-
-    </div>
-
-
-
-
-      <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2UWTFpmkltPpI6xIiBMpiGIk5HZwZh_M">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2UWTFpmkltPpI6xIiBMpiGIk5HZwZh_M">
     </script>
-      <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

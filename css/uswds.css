@@ -1331,7 +1331,7 @@ select.usa-input-success {
 
 label {
   display: block;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   max-width: 46rem;
 }
 
@@ -2961,8 +2961,7 @@ form a {
 form [type="submit"],
 form [type="submit"] {
   display: block;
-  margin-bottom: 1.5em;
-  margin-top: 2.5rem;
+  margin: 1.5rem auto 1.5em auto;
 }
 
 @media screen and (min-width: 600px) {
@@ -2999,7 +2998,7 @@ form [name="confirmPassword"] {
 fieldset {
   border: none;
   margin: 0;
-  padding: 0;
+  padding: 0.5em;
 }
 
 @media screen and (min-width: 600px) {
@@ -3438,10 +3437,10 @@ fieldset {
 
 .usa-logo-text {
   display: block;
-  font-size: 0.9375rem;
+  font-size: 1.875rem;
   font-style: normal;
   font-weight: 700;
-  margin: 0;
+  margin: 1rem 0 0 0;
 }
 
 @media screen and (min-width: 951px) {
