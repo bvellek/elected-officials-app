@@ -196,6 +196,7 @@ function getPosition(position) {
 
   geocoder.geocode({'location': latlng}, function(results, status) {
     if (status === 'OK') {
+      console.log(results);
       var street = results[0].address_components[0].long_name + ' ' + results[0].address_components[1].short_name;
       var city = results[0].address_components[3].long_name;
       var state = results[0].address_components[5].short_name;
