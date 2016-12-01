@@ -6,7 +6,7 @@ function getDataFromApi(addressString, callback) {
     address: addressString,
   };
   $.getJSON(CIVIC_INFO_BASE_URL, query, callback).fail(function() {
-    $('.invalid-address-page').show();
+    $('.invalid-address-page').removeAttr('hidden').show();
     $('.contact-page').hide();
     $('.address-page').hide();
   });
@@ -45,7 +45,7 @@ function displaySearchData(data) {
       $('.contact-page').html(resultElement);
     });
   } else {
-    $('.invalid-address-page').show();
+    $('.invalid-address-page').removeAttr('hidden').show();
     $('.contact-page').hide();
     $('.address-page').hide();
   }
@@ -90,7 +90,7 @@ function displayResult(item, office) {
   //Photo display
   if (item.photoUrl) {
     var photoUrl = item.photoUrl;
-    newResult.find('.headshot-container').css('background-image', 'url("' + photoUrl.substring(5) + '")');
+    newResult.find('.headshot-container').css('background-image', 'url("https:' + photoUrl.substring(5) + '")');
   } else {
     newResult.find('.headshot-container').css('background-image', 'url(img/noIMG.jpg)');
   }
@@ -179,7 +179,8 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getPosition);
   } else {
-    $('.geo-results-error-page').show();
+    $('.geo-results-error-page').removeAttr('hidden').show();
+    $('.address-page').hide();
   }
 }
 
@@ -215,11 +216,6 @@ function getPosition(position) {
       var state1 = [getAddressComponentByType("administrative_area_level_1")][0].short_name;
       var zip1 = [getAddressComponentByType("postal_code")][0].short_name;
 
-      // var street = results[0].address_components[0].long_name + ' ' + results[0].address_components[1].short_name;
-      // var city = results[0].address_components[3].long_name;
-      // var state = results[0].address_components[5].short_name;
-      // var zipcode = results[0].address_components[7].short_name;
-
 
       $('#street-input').val(street1);
       $('#city-input').val(city1);
@@ -232,7 +228,7 @@ function getPosition(position) {
 
     } else {
       $('.address-page').hide();
-      $('.geo-results-error-page').show();
+      $('.geo-results-error-page').removeAttr('hidden').show();
       $('#address-form').show();
     }
   });
@@ -242,18 +238,13 @@ function getPosition(position) {
 // Event Listeners
 
 $(document).ready(function(e) {
-  $('.address-page').hide();
-  $('.contact-page').hide();
-  $('.geo-results-error-page').hide();
-  $('.invalid-address-page').hide();
-
-
 
   $('.landing-page').on('click', '#start-link', function(e) {
     e.preventDefault();
     $('.landing-page').hide();
     $('.loader').hide();
-    $('.address-page').show();
+    $('.address-page').removeAttr('hidden');
+    $('body').scrollTop(0);
   });
 
   $('.address-page').on('click', '#geolocate-btn', function(e) {
@@ -262,11 +253,13 @@ $(document).ready(function(e) {
     $('#address-form').hide();
     $('.loader').show();
     getLocation();
+    $('#address-form').scrollTop(0);
   });
 
   $('.geo-results-error-page').on('click', '#geo-error-btn', function(e) {
     e.preventDefault();
     $('.address-page').show();
+    $('#address-form').show();
     $('.loader').hide();
     $('.geo-results-error-page').hide();
   });
@@ -282,7 +275,8 @@ $(document).ready(function(e) {
     e.preventDefault();
     getDataFromApi(makeAddressString(), displaySearchData);
     $('.address-page').hide();
-    $('.contact-page').show();
+    $('.contact-page').removeAttr('hidden');
+    $('.contact-page').scrollTop(0);
   });
 
 
