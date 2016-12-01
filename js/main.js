@@ -1,13 +1,15 @@
-
 var CIVIC_INFO_BASE_URL = 'https://www.googleapis.com/civicinfo/v2/representatives';
-
 
 function getDataFromApi(addressString, callback) {
   var query = {
     key: 'AIzaSyAt0jGSlpc9KfAJJN2KM15XS8f52bQjyKo',
     address: addressString,
   };
-  $.getJSON(CIVIC_INFO_BASE_URL, query, callback);
+  $.getJSON(CIVIC_INFO_BASE_URL, query, callback).fail(function() {
+    $('.invalid-address-page').show();
+    $('.contact-page').hide();
+    $('.address-page').hide();
+  });
 }
 
 
@@ -16,19 +18,35 @@ function makeAddressString() {
     $('#city-input').val() + ' ' +
     $('#state-select option:selected').val() + ' ' +
     $('#postal-code-input').val();
-    console.log(address);
   return address;
 }
 
+
+function getOfficeByOffical(data, officialIndex) {
+  var officeMatch;
+  data.offices.forEach(function(office) {
+    office.officialIndices.forEach(function(officeIndex) {
+      console.log(officeIndex, officialIndex);
+      if (officeIndex == officialIndex) {
+        officeMatch = office;
+        return false;
+      }
+    });
+  });
+  return officeMatch;
+}
 
 function displaySearchData(data) {
   var resultElement = '';
   console.log(data);
 
   if (data.officials) {
-    data.officials.forEach(function(item) {
-      console.log(item);
-      resultElement += displayResult(item);
+
+    data.officials.forEach(function(official, officialIndex) {
+      var office = getOfficeByOffical(data, officialIndex);
+      console.log(office);
+      console.log(official);
+      resultElement += displayResult(official, office);
       $('.contact-page').html(resultElement);
     });
   } else {
@@ -43,7 +61,7 @@ function displaySearchData(data) {
 var resultTemplate = $(
 '<section class="contact-card">' +
   '<div class="headshot-container">' +
-    '<img class="headshot" src="" alt="">' +
+    // '<img class="headshot" src="" alt="">' +
   '</div>' +
   '<div class="info">' +
     '<h3>Name: <a class="url fn" target="_blank" href=""></a></h3>' +
@@ -71,16 +89,18 @@ var resultTemplate = $(
 
 
 
-function displayResult(item) {
+function displayResult(item, office) {
   var newResult = $(resultTemplate).clone();
 
   //Photo display
   if (item.photoUrl) {
     var photoUrl = item.photoUrl;
-    newResult.find('.headshot').attr('src', photoUrl);
+    newResult.find('.headshot-container').css('background-image', 'url(' + photoUrl + ')');
   } else {
-    newResult.find('.headshot').attr('src', 'img/noIMG.jpg');
+    newResult.find('.headshot-container').css('background-image', 'url(img/noIMG.jpg)');
   }
+
+  newResult.find('.office span').text(office.name);
 
   //Name display as link if URL available
   if (item.urls) {
