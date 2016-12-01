@@ -95,7 +95,7 @@ function displayResult(item, office) {
   //Photo display
   if (item.photoUrl) {
     var photoUrl = item.photoUrl;
-    newResult.find('.headshot-container').css('background-image', 'url(' + photoUrl + ')');
+    newResult.find('.headshot-container').css('background-image', 'url("https:' + photoUrl.substring(5) + '")');
   } else {
     newResult.find('.headshot-container').css('background-image', 'url(img/noIMG.jpg)');
   }
