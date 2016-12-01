@@ -74,8 +74,8 @@ var resultTemplate = $(
         '<li>Address:' +
           '<div class="adr">' +
             '<div class="street-address"></div>' +
-            '<span class="locality"></span>,' +
-            '<span class="region"></span>,' +
+            '<span class="locality"></span><span class="comma-one">, </span>' +
+            '<span class="region"></span><span> </span>' +
             '<span class="postal-code"></span>' +
           '</div>' +
         '</li>' +
@@ -133,11 +133,17 @@ function displayResult(item, office) {
   //Address display with optional line two for street address
   if (item.address) {
     var city = item.address[0].city;
-    var state = item.address[0].state;
     var zip = item.address[0].zip;
     newResult.find('li .locality').text(city);
-    newResult.find('li .region').text(state);
     newResult.find('li .postal-code').text(zip);
+
+    if (item.address[0].state) {
+      var state = item.address[0].state;
+      newResult.find('li .region').text(state);
+    } else {
+      newResult.find('li .region').remove();
+      newResult.find('li .comma-one').remove();
+    }
 
     if (item.address[0].line2) {
       var street1 = item.address[0].line1;
