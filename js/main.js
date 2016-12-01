@@ -65,7 +65,7 @@ var resultTemplate = $(
     '<details class="contact-info">' +
       '<summary>Contact Information</summary>' +
       '<ul>' +
-        '<li>Phone: <span class="tel"></span></li>' +
+        '<li>Phone: <a href="" class="tel"></a></li>' +
         '<li>Address:' +
           '<div class="adr">' +
             '<div class="street-address"></div>' +
@@ -121,6 +121,7 @@ function displayResult(item, office) {
   if (item.phones) {
     var phone = item.phones[0];
     newResult.find('li .tel').text(phone);
+    newResult.find('li .tel').attr('href', 'tel:' + phone);
   } else {
     newResult.find('li .tel').remove();
   }
@@ -238,6 +239,11 @@ function getPosition(position) {
 // Event Listeners
 
 $(document).ready(function(e) {
+
+  //forces scrolled to top on refresh
+  $(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+  });
 
   $('.landing-page').on('click', '#start-link', function(e) {
     e.preventDefault();
