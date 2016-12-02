@@ -31,29 +31,38 @@
 
       <section class="usa-grid usa-section">
         <div class="usa-width-one-third">
-          <h3>Contacting elected offials</h3>
+          <h3>Contacting elected officials</h3>
         </div>
         <div class="usa-width-two-thirds">
           <p>Elected officials work for their constituents and need to know what their constituents think. Since they work for you, they want to know how you feel about the issues and what you want done on specific legislation. Do not underestimate the power of calling, writing, and visiting elected&nbsp;officials. </p>
         </div>
       </section>
 
-      <button class="usa-button-primary" id="start-link" type="button" name="button">Find Your Officials</button>
+      <div class="button-div">
+        <button class="usa-button-primary" id="start-link" type="button" name="button">Find Your Officials</button>
+      </div>
     </div>
 
     <div hidden class="geo-results-error-page error usa-grid-full">
       <h2>Error: Browser does not support geolocation. Please enter your address manually.</h2>
-      <button class="usa-button-secondary" id="geo-error-btn" type="button" name="button">Enter Address</button>
+
+      <div class="button-div">
+        <button class="usa-button-secondary" id="geo-error-btn" type="button" name="button">Enter Address</button>
+      </div>
     </div>
 
     <div hidden class="invalid-address-page error usa-grid-full">
       <h2>Error: Invalid Address. Please re-enter your address.</h2>
-      <button class="usa-button-secondary" id="invalid-address-btn" type="button" name="button">Enter Address</button>
+
+      <div class="button-div">
+        <button class="usa-button-secondary" id="invalid-address-btn" type="button" name="button">Enter Address</button>
+      </div>
     </div>
 
     <div hidden class="address-page usa-grid-full">
-
-      <button class="usa-button-gray" id="geolocate-btn" type="button" name="button">Use current location*</button>
+      <div class="button-div">
+        <button class="usa-button-gray" id="geolocate-btn" type="button" name="button">Use current location*</button>
+      </div>
 
       <div class="geo-results-loading">
         <div class="loader">Loading...</div>
@@ -127,8 +136,9 @@
           <label for="postal-code-input">Zip Code</label>
           <input class="postal-code" id="postal-code-input" type="number" name="postal-code" postal-code placeholder="20500" max="99999" min="1" required>
         </fieldset>
-
-        <button class="usa-button-primary" id="address-submit" type="submit" name="address-submit-btn">Submit</button>
+        <div class="button-div">
+          <button class="usa-button-primary" id="address-submit" type="submit" name="address-submit-btn">Submit</button>
+        </div>
       </form>
       <p>* For accuracy of results, only use this function if you are currently located at the address of your voter&nbsp;registration.</p>
     </div>

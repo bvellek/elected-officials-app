@@ -1,9 +1,19 @@
 html, body {
-  background-color: #f9f9f9;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
 }
 
 body {
   text-align: center;
+}
+
+p {
+  padding: 0 0.5em;
+}
+
+.button-div {
+  padding-right: 0.75em;
+  padding-left: 0.75em;
 }
 
 .landing-page {
@@ -38,9 +48,8 @@ body {
   border-radius: 6px;
   min-width: 12.5em;
   margin-bottom: 1em;
-  max-width: 27.5em;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  max-width: 25em;
+  padding: 2.5rem 3rem;
 }
 
 .headshot-container {
@@ -61,7 +70,9 @@ body {
 .info {
   text-align: left;
   padding-top: 1rem;
-  width: 80%;
+  width: 90%;
+  float: left;
+  display: block;
 }
 
 .info h3 {
@@ -80,7 +91,7 @@ body {
   text-transform: capitalize;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 580px) {
   .headshot-container {
     min-width: 200px;
     max-width: 325px;
@@ -95,9 +106,18 @@ body {
     float: left;
     display: block;
     margin-right: 4.82916%;
-    width: 55%;
   }
 }
+
+/*@media screen and (min-width: 648px){
+  .info {
+    box-sizing: border-box;
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 55%;
+  }
+}*/
 
 @media screen and (min-width: 720px) {
   .headshot-container {
@@ -105,6 +125,14 @@ body {
     display: block;
     margin-right: 4.82916%;
     width: 30.11389%;
+  }
+
+  .info {
+    box-sizing: border-box;
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 55%;
   }
 
   .contact-card {
