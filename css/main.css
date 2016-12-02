@@ -36,19 +36,36 @@ body {
   background-color: #fff;
   border: 1px solid lightgrey;
   border-radius: 6px;
-  min-width: 200px;
+  min-width: 12.5em;
   margin-bottom: 1em;
+  max-width: 27.5em;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .headshot-container {
   min-width: 200px;
+  max-width: 325px;
   height: 200px;
   background-size: cover;
   border-radius: 2px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.office {
+  max-width: 24em;
 }
 
 .info {
   text-align: left;
+  padding-top: 1rem;
+  width: 80%;
+}
+
+.info h3 {
+  margin-top: 1em;
 }
 
 .contact-info {
@@ -62,6 +79,40 @@ body {
 .adr {
   text-transform: capitalize;
 }
+
+@media screen and (min-width: 600px) {
+  .headshot-container {
+    min-width: 200px;
+    max-width: 325px;
+    height: 200px;
+    background-size: cover;
+    border-radius: 2px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .info {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 55%;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .headshot-container {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 30.11389%;
+  }
+
+  .contact-card {
+    max-width: 45em;
+  }
+}
+
+
 
 @media screen and (min-width: 1040px) {
   .address-page {

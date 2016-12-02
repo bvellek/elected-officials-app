@@ -55,12 +55,12 @@ function displaySearchData(data) {
 
 var resultTemplate = $(
 '<section class="contact-card usa-grid usa-section">' +
-  '<div class="headshot-container usa-width-one-third">' +
+  '<div class="headshot-container">' +
     // '<img class="headshot" src="" alt="">' +
   '</div>' +
-  '<div class="info usa-width-two-thirds">' +
+  '<div class="info">' +
     '<h3>Name: <a class="url fn" target="_blank" href=""></a></h3>' +
-    '<h4 class="office">Office: <span></span></h4>' +
+    '<h4 class="office">Office: </h4>' +
     '<h4 class="party">Party: <span></span></h4>' +
     '<details class="contact-info">' +
       '<summary>Contact Information</summary>' +
@@ -95,7 +95,8 @@ function displayResult(item, office) {
     newResult.find('.headshot-container').css('background-image', 'url(img/noIMG.jpg)');
   }
 
-  newResult.find('.office span').text(office.name);
+  //Office display
+  newResult.find('.office').text('Office: ' + office.name);
 
   //Name display as link if URL available
   if (item.urls) {
