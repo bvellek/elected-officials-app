@@ -56,7 +56,6 @@ function displaySearchData(data) {
 var resultTemplate = $(
 '<section class="contact-card usa-grid usa-section">' +
   '<div class="headshot-container">' +
-    // '<img class="headshot" src="" alt="">' +
   '</div>' +
   '<div class="info">' +
     '<h3>Name: <a class="url fn" target="_blank" href=""></a></h3>' +
@@ -90,7 +89,7 @@ function displayResult(item, office) {
   //Photo display
   if (item.photoUrl) {
     var photoUrl = item.photoUrl;
-    newResult.find('.headshot-container').css('background-image', 'url("https:' + photoUrl.substring(5) + '")');
+    newResult.find('.headshot-container').css('background-image', 'url("https:' + photoUrl.substring(5) + '"), url(img/noIMG.jpg)');
   } else {
     newResult.find('.headshot-container').css('background-image', 'url(img/noIMG.jpg)');
   }
