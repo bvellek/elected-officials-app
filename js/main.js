@@ -282,6 +282,7 @@ $(document).ready(function(e) {
     getDataFromApi(makeAddressString(), displaySearchData);
     $('.address-page').hide();
     $('.contact-page').removeAttr('hidden');
+    $('.contact-page').show();
     $('.contact-page').scrollTop(0);
   });
 
