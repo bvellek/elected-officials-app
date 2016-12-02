@@ -175,7 +175,6 @@ function displayResult(item, office) {
 
 
 // Geolocation functions
-
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getPosition);
@@ -211,7 +210,6 @@ function getPosition(position) {
 
 
     if (status === 'OK') {
-
       var street1 = [getAddressComponentByType("street_number")][0].long_name + ' ' + [getAddressComponentByType("route")][0].short_name;
       var city1= [getAddressComponentByType("locality")][0].long_name;
       var state1 = [getAddressComponentByType("administrative_area_level_1")][0].short_name;
