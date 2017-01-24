@@ -2,11 +2,11 @@
 
 Discover Your Elected officials
 
-Goal: Help users find and contact their elected officials based on the user's address, using the Google Civic Information API.
+##Goal:
+Help users find and contact their elected officials based on the user's address, using the Google Civic Information API.
 
 
-Screenshots:
-
+##Screenshots:
 ![Landing Page](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/landing-page.png?raw=true)
 ![Address Form](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/address-form.png?raw=true)
 ![Geolocation Page](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/geolocation-loading-page.png?raw=true)
@@ -14,10 +14,10 @@ Screenshots:
 ![Mobile Results Page](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/mobile-view.png?raw=true)
 
 
-Summary:
+##Summary:
 This app was designed to allow users to easily find their elected officials based on their voter registration address. It was designed to be easy to use on mobile or desktop.
 
-Technology Used:
+##Technology Used:
  - HTML
  - CSS
  - JavaScript
