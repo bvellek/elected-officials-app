@@ -1,4 +1,4 @@
-# Discover Your Elected officials
+# Discover Your Elected Officials
 
 
 ##Goal:
