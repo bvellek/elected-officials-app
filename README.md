@@ -1,6 +1,5 @@
-# elected-officials-app
+# Discover Your Elected officials
 
-Discover Your Elected officials
 
 ##Goal:
 Help users find and contact their elected officials based on the user's address, using the Google Civic Information API.
