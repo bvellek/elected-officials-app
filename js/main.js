@@ -89,7 +89,7 @@ function displayResult(item, office) {
   //Photo display
   if (item.photoUrl) {
     var photoUrl = item.photoUrl;
-    newResult.find('.headshot-container').css('background-image', 'url("https:' + photoUrl.substring(5) + '"), url(img/noIMG.jpg)');
+    newResult.find('.headshot-container').css('background-image', 'url("' + photoUrl + '"), url(img/noIMG.jpg)');
   } else {
     newResult.find('.headshot-container').css('background-image', 'url(img/noIMG.jpg)');
   }
