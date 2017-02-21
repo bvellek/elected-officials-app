@@ -177,12 +177,23 @@ function displayResult(item, office) {
 // Geolocation functions
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getPosition);
+    navigator.geolocation.getCurrentPosition(getPosition, error, options);
   } else {
     $('.geo-results-error-page').removeAttr('hidden').show();
     $('.address-page').hide();
   }
 }
+
+function error(err) {
+  console.warn('Error' + err.code + ': ' + err.message);
+  $('.address-page').hide();
+  $('.geo-results-error-page').removeAttr('hidden').show();
+  $('#address-form').show();
+};
+
+var options = {
+  timeout: 6000
+};
 
 
 function getPosition(position) {
