@@ -1,0 +1,15 @@
+{
+  "name": "elected-officials-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bvellek/elected-officials-app.git",
+  "author": "Ben Vellek",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-uglify": "^2.2.0"
+  }
+}
