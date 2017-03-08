@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-        './build/js/main.min.js': ['./public/js/main.js']
+        './public/js/main.min.js': ['./public/js/main.js']
         }
       }
     },
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
           report: 'gzip'
         },
         files: {
-          './build/css/main.min.css': './public/css/uswds.css'
+          './public/css/main.min.css': './public/css/uswds.css'
         }
       },
   },
