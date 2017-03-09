@@ -14,10 +14,10 @@ module.exports = function(grunt) {
     cssmin: {
       ship: {
         options: {
-          report: 'gzip'
+          report: 'gzip' // --verbose to see the gzip value
         },
         files: {
-          './public/css/main.min.css': './public/css/uswds.css'
+          './public/css/main.min.css': './public/css/main.css'
         }
       },
   },
