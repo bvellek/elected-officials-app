@@ -6,11 +6,11 @@ Help users find and contact their elected officials based on the user's address,
 
 
 ## Screenshots:
-![Landing Page](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/landing-page.png?raw=true)
-![Address Form](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/address-form.png?raw=true)
-![Geolocation Page](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/geolocation-loading-page.png?raw=true)
-![Results Page](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/results-page.png?raw=true)
-![Mobile Results Page](https://github.com/bvellek/elected-officials-app/blob/master/img/screenshots/mobile-view.png?raw=true)
+![Landing Page](https://github.com/bvellek/elected-officials-app/blob/master/public/img/screenshots/landing-page.png?raw=true)
+![Address Form](https://github.com/bvellek/elected-officials-app/blob/master/public/img/screenshots/address-form.png?raw=true)
+![Geolocation Page](https://github.com/bvellek/elected-officials-app/blob/master/public/img/screenshots/geolocation-loading-page.png?raw=true)
+![Results Page](https://github.com/bvellek/elected-officials-app/blob/master/public/img/screenshots/results-page.png?raw=true)
+![Mobile Results Page](https://github.com/bvellek/elected-officials-app/blob/master/public/img/screenshots/mobile-view.png?raw=true)
 
 
 ## Summary:
